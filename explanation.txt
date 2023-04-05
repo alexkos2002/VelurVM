@@ -1,0 +1,18 @@
+// 32 bit memory, 60000 dwords of memory
+// 32 bit instructions, 22-32 bit data, 32 bit stack, 22 bit addresses(2 ^ 22 int memory slots to address);
+// INSTRUCTION STRUCTURE:
+// 8 bit - instruction code
+// 2 bit - first operand addressing type: 0b00 - value addressing, 0b01 - default stack addressing, 0b10 - stack disp addressing, 0b11 - no operand
+// 2 bit - second operand addressing type: 0b00 - value addressing, 0b01 - default stack addressing, 0b10 - stack disp addressing, 0b11 - no operand
+// 20 bit - operand address
+
+default addressing is a direct stack displacement
+
+halt;       x00
+push disp;  x01
+pop [disp]; x02
+loads;      x03
+loop disp;  x04
+endloop;    x05
+add;        x06
+div;        x07
